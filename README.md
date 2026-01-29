@@ -20,7 +20,7 @@
 
 2. IDE
    - there are many IDE for C/C++: Code::Blocks, Visual Studio Code(vsc)
-   - recomnded : vsc
+   - recommend : vsc
 
    1. Install VSC
    2. Essential VS Code Extensions ( trick: create hello.c then vsc auo suggests )
@@ -28,6 +28,23 @@
       - C/C++ Themes: for themes and colors
       - CMake Tools: to manage big projects ( multiple files )
       - Code Runner (optional but handy, to run a piece of code)
+
+   3. add run short key `Ctrl + R, Ctrl + C` (recommend to run quickly)
+      1. goto keyboard shortcuts (Ctrl + K, Ctrl + S)
+      2. click on json symbol (keybindings.json)
+      3. add the below code:
+
+         ```json
+         {
+            "key": "ctrl+r ctrl+c", // run C
+            "command": "workbench.action.terminal.sendSequence",
+            "args": { 
+                  "text": "gcc \"${file}\" -Wall -Wextra -g -o \"${fileBasenameNoExtension}\" && \"./${fileBasenameNoExtension}\"\u000D"
+               } // `\u000D` means Enter key automatically.
+         },
+         ```
+
+      4. Note:- this works only after opening terminal
 
 3. Optional: Pro Setup
    - Highly recommended once basics are done
