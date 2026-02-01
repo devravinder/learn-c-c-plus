@@ -27,6 +27,8 @@ sudo apt install cmake pkg-config ninja-build
 
 ### Set vcpkg path
 
+- add `CMakePresets.json` & `CMakeUserPresets.json` ( one time, if not exits  )
+  - [ref](https://learn.microsoft.com/en-us/vcpkg/get_started/get-started?pivots=shell-bash)
 - update vcpkg path in `CMakeUserPresets.json`
   - "VCPKG_ROOT": "path/to/vcpkg"
 
