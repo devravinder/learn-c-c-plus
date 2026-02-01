@@ -15,9 +15,19 @@ cJSON* loadJSON() {
     long len = ftell(f);
     rewind(f);
 
+    if (len <= 0) {
+        fclose(f);
+        return cJSON_CreateArray();
+    }
+
     char *data = malloc(len + 1);
-    fread(data, 1, len, f);
-    data[len] = 0;
+    if (!data) {
+        fclose(f);
+        return cJSON_CreateArray();
+    }
+
+    size_t read_len = fread(data, 1, len, f);
+    data[read_len] = 0;
 
     fclose(f);
 
@@ -30,10 +40,15 @@ cJSON* loadJSON() {
 void saveJSON(cJSON *json) {
 
     char *out = cJSON_Print(json);
+    if (!out) return;
 
     FILE *f = fopen(FILE_PATH, "w");
-    fputs(out, f);
-    fclose(f);
+    if (f) {
+        fputs(out, f);
+        fclose(f);
+    } else {
+        printf("Error: Could not open file %s for writing.\n", FILE_PATH);
+    }
 
     free(out);
 }

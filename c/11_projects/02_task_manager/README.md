@@ -5,6 +5,8 @@
 ```bash
 sudo apt update
 sudo apt install cmake
+sudo apt install ninja-build
+
 
 ```
 
@@ -38,3 +40,9 @@ cmake --preset=default
 cmake --build build
 ./build/task_manager
 ```
+
+## Things to know
+
+CMake  → generates build files
+Ninja  → actually builds the code
+gcc/clang → compiles
