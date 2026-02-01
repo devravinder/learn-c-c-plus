@@ -44,7 +44,7 @@
          },
          ```
 
-      4. Note:- this works only after opening terminal
+      4. Note:- this works only after opening terminal (open terminal in bin folder )
 
 3. Optional: Pro Setup
    - Highly recommended once basics are done

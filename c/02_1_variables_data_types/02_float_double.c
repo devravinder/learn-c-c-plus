@@ -1,5 +1,24 @@
 #include <stdio.h>
 
+/*
+
+| Specifier | Type                  |
+| --------- | --------------------- |
+| `%d`      | int                   |
+| `%u`      | unsigned int          |
+| `%ld`     | long                  |
+| `%lu`     | unsigned long         |
+| `%lld`    | long long             |
+| `%lf`     | long format for double|
+| `%f`      | float/double (printf) |
+| `%c`      | char                  |
+| `%s`      | string                |
+| `%p`      | pointer               |
+
+
+
+*/
+
 int main() {
 
 

@@ -42,7 +42,7 @@ int main(){
     printf("enter your village & state\n");
 
 
-    scanf("%s%s", village, state); // two inputs at a time
+    scanf("%s %s", village, state); // two inputs at a time (eg: Mirzapur Telanagana)
 
     printf("your  village & state %s & %s \n", village, state);
 

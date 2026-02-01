@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+// complete functions before this
 /*
  Types
  1. Local   : Declared inside function:
