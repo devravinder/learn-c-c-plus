@@ -1,3 +1,33 @@
-build
-*.o
+
 CMakeUserPresets.json
+
+# Build directories
+build/
+out/
+
+# vcpkg
+vcpkg_installed/
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Binary
+task_manager
+*.exe
+
+# Data files (optional - uncomment if you don't want to track tasks)
+# tasks.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db

@@ -15,4 +15,4 @@ Dependency manager → Build system → Compiler
 ## Project Management Types
 
 - install dependencies at syetm level + CMake
-- install dependencies at project level (vcpkg) + CMake    [recommonded]
+- install dependencies at project level (vcpkg) + pkg-config + CMake + Ninja    [recommonded]

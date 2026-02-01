@@ -1,48 +1,59 @@
 # Task Manger
 
-## cmake install (one time)
+## Prerequisites (Linux) [Ref](https://learn.microsoft.com/en-us/vcpkg/get_started/get-started?pivots=shell-bash)
+
+### vcpkg setup (One Time)
+
+1. Clone and bootstrap vcpkg:
+
+   ```bash
+   git clone https://github.com/microsoft/vcpkg.git
+   cd vcpkg && ./bootstrap-vcpkg.sh
+   ```
+
+2. Set environment variables (add to your `~/.bashrc` or `~/.zshrc`): ( One Time)
+
+   ```bash
+   export VCPKG_ROOT=/path/to/vcpkg
+   export PATH=$VCPKG_ROOT:$PATH
+   ```
+
+### install build tools ( One Time)
 
 ```bash
 sudo apt update
-sudo apt install cmake
-sudo apt install ninja-build
-
-
+sudo apt install cmake pkg-config ninja-build
 ```
 
-## vcpkg setup (one time) [Ref](https://learn.microsoft.com/en-us/vcpkg/get_started/get-started?pivots=shell-bash)
+### Set vcpkg path
 
-- `git clone https://github.com/microsoft/vcpkg.git`
-- `cd vcpkg && ./bootstrap-vcpkg.sh`
-
-- ```bash
-
-    export VCPKG_ROOT=/path/to/vcpkg
-    export PATH=$VCPKG_ROOT:$PATH
-
-  ```
-
-## Project Setup
-
-- `mkdir helloworld && cd helloworld`
-- `vcpkg new --application`
-- `vcpkg add port cjson`
+- update vcpkg path in `CMakeUserPresets.json`
+  - "VCPKG_ROOT": "path/to/vcpkg"
 
 ## Build & Run
 
-```bash
-mkdir data
-echo [] > data/tasks.json
-```
+1. Prepare Data Directory
 
-```bash
-cmake --preset=default
-cmake --build build
-./build/task_manager
-```
+   ```bash
+   mkdir -p data
+   ```
 
-## Things to know
+2. Configure & Build:
 
-CMake  → generates build files
-Ninja  → actually builds the code
-gcc/clang → compiles
+   ```bash
+      cmake --preset=default
+      cmake --build build
+   ```
+
+3. Run
+
+   ```bash
+   ./build/task_manager
+   ```
+
+## Architecture
+
+- CMake: Build system generator.
+- Ninja: Fast build system (acts as the make tool).
+- vcpkg: C/C++ Package Manager (handles `cjson`).
+- GCC/Clang: Compiler.
