@@ -1,5 +1,19 @@
 # Learn C
 
+## Topics As Per C Programming MSc Electronics
+
+- Basic C Intro
+- variables
+- date types
+- operators
+- input / output
+- conditional statements
+- functions
+- string, array
+- structt
+- pointer
+- goto
+
 ## Topics Order
 
 - hello world (basic syntax)
@@ -24,6 +38,7 @@
     - for
     - break, continue
     - nested loops
+  - goto
 - arrays
   - 2-D & n-D arrays
 - structs
